@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration // 설정 정보
 public class AppConfig {
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()  <<< 이러면 싱글톤 깨지는게 아닐까,,?
 
     @Bean
     public MemberService memberService(){
@@ -19,7 +21,7 @@ public class AppConfig {
     }
 
     @Bean
-    public static MemoryMemberRepository memberRepository() {
+    public MemoryMemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
