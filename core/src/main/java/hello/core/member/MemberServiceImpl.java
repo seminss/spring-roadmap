@@ -10,6 +10,10 @@ public class MemberServiceImpl implements MemberService{
     //여기서 인터페이스만 불러오고, 구현 객체를 선택하지 않으면 아래 메서드에서 null point exception 이 터진다.
     private final MemberRepository memberRepository;
 
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
     @Autowired //ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
